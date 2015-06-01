@@ -21,7 +21,8 @@
 			}
 		)
 */		
-		$("#animation-block").slideUp(animation_speed)
+		$("#animation-block, #likes-iframe").slideUp(animation_speed)
+		$("body").css({'overflow' : 'visible'})
 		//$("#row-buttons").delay(50).animate({"top" : "-375px"}, 350)
 
 	}
@@ -33,7 +34,7 @@
 	 */
 	function startAnimation()
 	{
-		$("#row-ads, #row-logo, #row-example, #row-menu").slideUp(animation_speed)
+		$("#row-ads, #row-logo, #row-example, #row-menu, #likes-iframe").slideUp(animation_speed)
 	}
 	
 	/**
@@ -42,7 +43,7 @@
 	 */
 	function stopAnimation()
 	{
-		$("#row-ads, #row-logo, #row-example, #row-menu").slideDown(animation_speed)
+		$("#row-ads, #row-logo, #row-example, #row-menu, #likes-iframe").slideDown(animation_speed)
 		hideContent()
 	}
 	
