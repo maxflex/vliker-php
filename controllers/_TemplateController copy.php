@@ -1,0 +1,1 @@
+<?php	// Контроллер	class _TemplateController extends Controller	{		public $defaultAction = "";				// Папка вьюх		protected $_viewsFolder	= "";										##################################################		###################### AJAX ######################		##################################################							}

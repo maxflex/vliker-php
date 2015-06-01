@@ -1,0 +1,12 @@
+ы.button_blue, .button_gray { text-align: center; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; display: inline-block; *display: inline; zoom: 1; line-height: 16px;}  
+.button_blue input, .button_gray input { border:1px solid; background: none; font-size: 11px; margin: 0px; cursor: pointer; white-space: nowrap; outline: none; padding: 4px 14px 4px; *padding: 5px 14px 3px; font-family: tahoma, verdana, arial, sans-serif, Lucida Sans; overflow: visible;}  
+.button_blue input::-moz-focus-inner,.button_gray input::-moz-focus-inner { border:0;}  
+.button_blue { border: 1px solid #416796; background: #6485aa;}  
+.button_blue input { border-top-color: #7c98ba; border-bottom-color: #5e80a9; border-left-color: #5e80a9; border-right-color: #5e80a9; color: #FFF; text-shadow:0 1px 0 #45688E; *border: 0; background: url('http://s77.ucoz.ru/img/button_bg.png') #6181a6 repeat-x top; background-position: 0px -16px; *background-position: 0px -16px;}  
+.button_blue input:hover { background-position: 0px -8px;}  
+.button_blue input:active { background: #5e80a5; border: 1px solid #5e80a5;}  
+.button_gray { border: 1px solid #b3b3b3; background: #e0e0e0;}  
+.button_gray input {border-top-color: #ffffff;border-bottom-color: #e5e5e5;border-left-color: #e7e7e7;border-right-color: #e7e7e7;color: #444;text-shadow:0 1px 0 #ffffff;*border: 0;background: url('http://s77.ucoz.ru/img/button_bg.png') #dddddd repeat-x top;background-position: 0px -54px;}  
+.button_gray input:hover { background-position: 0px -46px;}  
+.button_gray input:active {background: #dcdcdc;border: 1px solid #dcdcdc;}  
+@media not screen and (1) {.button_blue input:active, .button_gray input:active {border: none;padding: 5px 15px 5px;}}

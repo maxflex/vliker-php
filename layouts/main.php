@@ -1,0 +1,1 @@
+<div class="content" ng-app="VLiker" ng-controller="MainCtrl">

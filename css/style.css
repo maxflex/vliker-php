@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "RaleWayThin";
+  src: url(../fonts/Raleway/Raleway-Thin.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "RaleWayExtraLight";
+  src: url(../fonts/Raleway/Raleway-ExtraLight.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "RaleWayLight";
+  src: url(../fonts/Raleway/Raleway-Light.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "RaleWayRegular";
+  src: url(../fonts/Raleway/Raleway-Regular.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "RalewayMedium";
+  src: url(../fonts/Raleway/Raleway-Medium.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "RalewayBold";
+  src: url(../fonts/Raleway/Raleway-Bold.ttf) format("truetype"); }
+
+body {
+  overflow: hidden; }
+
+.likes-count {
+  font-size: 26px;
+  padding: 0; }
+  .likes-count .glyphicon {
+    font-size: 22px; }
+  .likes-count #likes-count {
+    top: -2px;
+    position: relative; }
+
+#like-blocks {
+  position: relative; }
+  #like-blocks #div-blocker {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 49;
+    background-color: white;
+    opacity: 0.5;
+    display: none; }
+
+.glyphicon-middle {
+  top: 3px; }
+
+.modal-footer button {
+  outline: none !important;
+  border-radius: 5px; }
+
+.btn-group .btn:first-child {
+  border-radius: 5px 0 0 5px; }
+.btn-group .btn:last-child {
+  border-radius: 0 5px 5px 0; }
+
+.no-opacity {
+  opacity: 1 !important; }
+
+hr {
+  border-top: 1px solid rgba(170, 186, 204, 0.3); }
+
+#row-content {
+  border-top: 1px solid rgba(170, 186, 204, 0.3);
+  margin-top: 25px;
+  display: none;
+  padding-top: 10px; }
+
+#row-example {
+  margin-bottom: 40px;
+  min-height: 18px; }
+
+.row-menu {
+  margin-top: 10px;
+  text-align: center; }
+  .row-menu img {
+    width: 100px;
+    cursor: pointer;
+    opacity: 0.5;
+    margin-bottom: 12px;
+    z-index: 9;
+    -webkit-transition: all 0.1s ease;
+    /* Safari and Chrome */
+    -moz-transition: all 0.1s ease;
+    /* Firefox */
+    -ms-transition: all 0.1s ease;
+    /* IE 9 */
+    -o-transition: all 0.1s ease;
+    /* Opera */
+    transition: all 0.1s ease; }
+    .row-menu img.hovered {
+      opacity: 1;
+      -webkit-transform: scale(1.1);
+      /* Safari and Chrome */
+      -moz-transform: scale(1.1);
+      /* Firefox */
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -o-transform: scale(1.1);
+      /* Opera */
+      transform: scale(1.1); }
+  .row-menu .menu-label {
+    color: #527599;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px; }
+
+#main-logo {
+  width: 250px; }
+
+#row-controls {
+  margin-top: 20px; }
+
+#main-input {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  border: 3px solid #527599;
+  outline: none;
+  box-shadow: none;
+  /*
+	&:focus {
+		border-color: $blue_hover;
+		& + .input-group-btn #start-button {
+			-webkit-transition: all linear .3s;
+			transition: all linear .3s;
+			background-color: $blue_hover;
+			border-color: $blue_hover;
+		}
+	}
+*/ }
+
+#start-button {
+  text-transform: uppercase;
+  outline: none; }
+  #start-button:hover {
+    background-color: #7A9EC0;
+    border-color: #7A9EC0; }
+
+#row-buttons {
+  position: relative; }
+
+.example-text {
+  font-family: "RalewayRegular";
+  font-size: 13px; }
+  .example-text #example-link {
+    cursor: pointer;
+    border-bottom: 1px dotted #527599; }
+    .example-text #example-link:hover {
+      color: #A9BACC;
+      border-color: #A9BACC; }
+
+h4 {
+  font-family: "RalewayRegular"; }
+
+.block-line {
+  text-align: center;
+  margin-bottom: 20px; }
+  .block-line .vliker-block {
+    overflow: hidden;
+    margin: 0 13px;
+    background-color: white;
+    background: url('../img/loaders/progress_blue.gif') no-repeat 50% 50%;
+    z-index: 1;
+    width: 280px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid rgba(83, 119, 153, 0.3);
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-transition: all 0.1s ease;
+    /* Safari and Chrome */
+    -moz-transition: all 0.1s ease;
+    /* Firefox */
+    -ms-transition: all 0.1s ease;
+    /* IE 9 */
+    -o-transition: all 0.1s ease;
+    /* Opera */
+    transition: all 0.1s ease;
+    position: relative; }
+    .block-line .vliker-block:hover {
+      z-index: 9;
+      box-shadow: 0 0 25px #7A9EC0;
+      border: none;
+      -webkit-transform: scale(1.1);
+      /* Safari and Chrome */
+      -moz-transform: scale(1.1);
+      /* Firefox */
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -o-transform: scale(1.1);
+      /* Opera */
+      transform: scale(1.1); }
+      .block-line .vliker-block:hover img.thumbnail {
+        width: 280px; }
+    .block-line .vliker-block img.thumbnail {
+      width: 278px;
+      padding: 0;
+      border: none; }
+    .block-line .vliker-block .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      cursor: default !important; }
+      .block-line .vliker-block .card figure {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; }
+        .block-line .vliker-block .card figure.front {
+          background: url('../img/icons/close@2x.png') no-repeat 50% 50%;
+          width: 100%;
+          height: 100%;
+          background-color: #527599;
+          background-size: 128px; }
+        .block-line .vliker-block .card figure.back {
+          transform: rotateY(180deg);
+          background-color: #7A9EC0;
+          color: white;
+          line-height: 200px;
+          text-transform: uppercase; }
+      .block-line .vliker-block .card:hover {
+        transform: rotateY(180deg); }
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+  color: #BAC2CC; }
+  .footer a {
+    text-decoration: none;
+    text-shadow: none;
+    color: #BAC2CC; }
+  .footer a:hover {
+    text-decoration: underline;
+    color: #2B587A; }

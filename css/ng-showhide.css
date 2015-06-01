@@ -1,0 +1,1309 @@
+/* line 18, ../sass/screen.scss */
+h1 {
+  font-family: "RaleWayExtraLight", sans-serif;
+}
+
+/* line 22, ../sass/screen.scss */
+h2 {
+  font-family: 'RaleWayLight', sans-serif;
+}
+
+/* line 30, ../sass/screen.scss */
+.animate-repeat.ng-move, .animate-repeat.ng-enter {
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 37, ../sass/screen.scss */
+.animate-repeat.ng-move-active, .animate-repeat.ng-enter-active {
+  -moz-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/* line 47, ../sass/screen.scss */
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 53, ../sass/screen.scss */
+.animate-show.ng-hide-remove-active {
+  -moz-animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+/* line 62, ../sass/screen.scss */
+.animate-show-fadeIn.ng-hide-add, .animate-show-fadeIn.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 68, ../sass/screen.scss */
+.animate-show-fadeIn.ng-hide-remove-active {
+  -moz-animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* line 77, ../sass/screen.scss */
+.animate-show-bounce.ng-hide-add, .animate-show-bounce.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 83, ../sass/screen.scss */
+.animate-show-bounce.ng-hide-remove-active {
+  -moz-animation-name: bounceIn;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+/* line 92, ../sass/screen.scss */
+.animate-show-down.ng-hide-add, .animate-show-down.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 98, ../sass/screen.scss */
+.animate-show-down.ng-hide-remove-active {
+  -moz-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/* line 106, ../sass/screen.scss */
+.animate-show-right.ng-hide-add, .animate-show-right.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 112, ../sass/screen.scss */
+.animate-show-right.ng-hide-remove-active {
+  -moz-animation-name: fadeInRight;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+/* line 121, ../sass/screen.scss */
+.animate-show-hide.ng-hide-add {
+  display: block !important;
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 128, ../sass/screen.scss */
+.animate-show-hide.ng-hide-add-active {
+  -moz-animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+/* line 133, ../sass/screen.scss */
+.animate-show-hide.ng-hide-remove {
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 139, ../sass/screen.scss */
+.animate-show-hide.ng-hide-remove-active {
+  -moz-animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+/* line 148, ../sass/screen.scss */
+.animate-up-down.ng-hide-add {
+  display: block !important;
+  -moz-animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 155, ../sass/screen.scss */
+.animate-up-down.ng-hide-add-active {
+  -moz-animation-name: fadeOutUp;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+/* line 160, ../sass/screen.scss */
+.animate-up-down.ng-hide-remove {
+  -moz-animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 166, ../sass/screen.scss */
+.animate-up-down.ng-hide-remove-active {
+  -moz-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/* line 175, ../sass/screen.scss */
+.animate-fade.ng-hide-add {
+  display: block !important;
+  -moz-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 182, ../sass/screen.scss */
+.animate-fade.ng-hide-add-active {
+  -moz-animation-name: fadeOut07;
+  -webkit-animation-name: fadeOut07;
+  animation-name: fadeOut07;
+}
+/* line 187, ../sass/screen.scss */
+.animate-fade.ng-hide-remove {
+  -moz-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 193, ../sass/screen.scss */
+.animate-fade.ng-hide-remove-active {
+  -moz-animation-name: fadeIn07;
+  -webkit-animation-name: fadeIn07;
+  animation-name: fadeIn07;
+}
+
+/* line 198, ../sass/screen.scss */
+.trans, .vote-count {
+  opacity: 0.7;
+}
+
+/* line 202, ../sass/screen.scss */
+.text-error, .text-danger {
+  color: #ff0039;
+}
+
+/* line 206, ../sass/screen.scss */
+.text-error-bright {
+  color: #ff3361;
+}
+
+/* line 210, ../sass/screen.scss */
+.text-lime {
+  color: #e8ffe0;
+}
+
+/* line 214, ../sass/screen.scss */
+.vote-count {
+  font-size: 16px;
+  color: white;
+  font-family: 'RaleWayRegular', sans-serif;
+}
+
+/* line 223, ../sass/screen.scss */
+h2.news {
+  cursor: pointer;
+  display: inline-block !important;
+}
+/* line 224, ../sass/screen.scss */
+h2.news .badge-success {
+  background: #3fb618;
+  opacity: 0.8;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+/* line 238, ../sass/screen.scss */
+h2.news:hover {
+  opacity: 1;
+}
+/* line 242, ../sass/screen.scss */
+h2.news.selected {
+  opacity: 1 !important;
+}
+/* line 244, ../sass/screen.scss */
+h2.news.selected .badge-success {
+  box-shadow: 0px 0px 8px 2px rgba(56, 158, 21, 0.5);
+}
+
+/* line 253, ../sass/screen.scss */
+h3.foll {
+  width: 50%;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+/* line 260, ../sass/screen.scss */
+.news-rounded {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* line 268, ../sass/screen.scss */
+.news-div {
+  font-family: 'RaleWayMedium', sans-serif;
+  margin-top: 30px;
+  color: white;
+  font-size: 17px;
+  width: 100%;
+}
+/* line 275, ../sass/screen.scss */
+.news-div .news-row {
+  margin-bottom: 10px;
+}
+/* line 278, ../sass/screen.scss */
+.news-div .news-row .left-part {
+  width: 92%;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+/* line 285, ../sass/screen.scss */
+.news-div .news-row.old {
+  opacity: 0.5;
+}
+/* line 290, ../sass/screen.scss */
+.news-div .subscription-row {
+  margin-bottom: -1px;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 0;
+}
+/* line 297, ../sass/screen.scss */
+.news-div .subscription-row span {
+  opacity: 0.8;
+}
+/* line 301, ../sass/screen.scss */
+.news-div .subscription-row:hover {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* line 305, ../sass/screen.scss */
+.news-div .subscription-row:hover .subscription-arrow {
+  color: #41ba18;
+}
+/* line 309, ../sass/screen.scss */
+.news-div .subscription-row:hover a.login-link {
+  opacity: 1;
+}
+/* line 313, ../sass/screen.scss */
+.news-div .subscription-row:hover span {
+  opacity: 1;
+}
+/* line 319, ../sass/screen.scss */
+.news-div .news-seperator {
+  opacity: 0.2;
+}
+/* line 323, ../sass/screen.scss */
+.news-div span.voted-adj {
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+/* line 328, ../sass/screen.scss */
+.news-div a.login-link {
+  letter-spacing: 2px;
+  opacity: 0.8;
+  color: white;
+}
+/* line 333, ../sass/screen.scss */
+.news-div a.login-link:hover {
+  opacity: 1;
+}
+/* line 338, ../sass/screen.scss */
+.news-div a.name-link {
+  opacity: 0.8;
+  color: white;
+}
+/* line 342, ../sass/screen.scss */
+.news-div a.name-link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 349, ../sass/screen.scss */
+.circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 56px !important;
+  width: 56px !important;
+  background: white;
+  display: inline-block;
+  opacity: 0.4;
+  font-size: 22px;
+  font-family: 'RaleWayMedium', sans-serif;
+  cursor: pointer;
+  margin-right: 4px;
+  vertical-align: top;
+  float: left;
+}
+/* line 364, ../sass/screen.scss */
+.circle:hover {
+  opacity: 1;
+}
+/* line 368, ../sass/screen.scss */
+.circle.active {
+  cursor: default;
+  opacity: 1;
+}
+/* line 373, ../sass/screen.scss */
+.circle span {
+  display: block;
+  margin-top: 16px;
+  color: #6e96d1;
+}
+/* line 374, ../sass/screen.scss */
+.circle span.glyphicon {
+  font-size: 32px;
+  width: 100%;
+}
+
+/* line 384, ../sass/screen.scss */
+.regular {
+  font-family: 'RaleWayRegular', sans-serif !important;
+}
+
+/* line 388, ../sass/screen.scss */
+.trans-8 {
+  opacity: 0.8;
+}
+
+/* line 392, ../sass/screen.scss */
+.badge-news {
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* line 399, ../sass/screen.scss */
+.thumb-circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  color: white;
+  height: 40px !important;
+  width: 40px !important;
+  text-indent: 10.5px;
+  line-height: 40px;
+  top: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 20px;
+}
+/* line 412, ../sass/screen.scss */
+.thumb-circle.old {
+  opacity: 1;
+  background: white !important;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+/* line 417, ../sass/screen.scss */
+.thumb-circle.old.ofor {
+  color: #41ba18;
+}
+/* line 420, ../sass/screen.scss */
+.thumb-circle.old.oagainst {
+  color: #ff0039;
+}
+/* line 423, ../sass/screen.scss */
+.thumb-circle.old.oplus {
+  color: #0072e6;
+}
+/* line 426, ../sass/screen.scss */
+.thumb-circle.old.oblack {
+  color: black;
+}
+/* line 429, ../sass/screen.scss */
+.thumb-circle.old.oinfo {
+  color: #9954bb;
+}
+/* line 432, ../sass/screen.scss */
+.thumb-circle.old.ounsub {
+  color: #ff0039;
+  text-indent: 9.5px;
+}
+/* line 438, ../sass/screen.scss */
+.thumb-circle:hover {
+  background: white !important;
+  opacity: 1;
+}
+/* line 443, ../sass/screen.scss */
+.thumb-circle.for {
+  background: #41ba18;
+}
+/* line 445, ../sass/screen.scss */
+.thumb-circle.for:hover {
+  color: #41ba18 !important;
+  -moz-box-shadow: 0px 0px 15px 5px #41ba18;
+  -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
+  box-shadow: 0px 0px 15px 5px #41ba18;
+}
+/* line 451, ../sass/screen.scss */
+.thumb-circle.against, .thumb-circle.unsub {
+  background: #ff0039;
+}
+/* line 453, ../sass/screen.scss */
+.thumb-circle.against:hover, .thumb-circle.unsub:hover {
+  color: #ff0039;
+  -moz-box-shadow: 0px 0px 15px 5px #ff0039;
+  -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
+  box-shadow: 0px 0px 15px 5px #ff0039;
+}
+/* line 459, ../sass/screen.scss */
+.thumb-circle.plus {
+  background: #0072e6;
+}
+/* line 461, ../sass/screen.scss */
+.thumb-circle.plus:hover {
+  color: #0072e6;
+  -moz-box-shadow: 0px 0px 15px 5px #0072e6;
+  -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
+  box-shadow: 0px 0px 15px 5px #0072e6;
+}
+/* line 467, ../sass/screen.scss */
+.thumb-circle.info {
+  background: #9954bb;
+}
+/* line 469, ../sass/screen.scss */
+.thumb-circle.info:hover {
+  color: #9954bb;
+  -moz-box-shadow: 0px 0px 15px 5px #9954bb;
+  -webkit-box-shadow: 0px 0px 15px 5px #9954bb;
+  box-shadow: 0px 0px 15px 5px #9954bb;
+}
+/* line 475, ../sass/screen.scss */
+.thumb-circle.black {
+  background: black;
+}
+/* line 477, ../sass/screen.scss */
+.thumb-circle.black:hover {
+  color: black !important;
+  -moz-box-shadow: 0px 0px 15px 5px black;
+  -webkit-box-shadow: 0px 0px 15px 5px black;
+  box-shadow: 0px 0px 15px 5px black;
+}
+/* line 484, ../sass/screen.scss */
+.thumb-circle.unsub {
+  text-indent: 9.5px;
+}
+
+/* line 491, ../sass/screen.scss */
+.eye.glyphicon-eye-close:hover {
+  color: #e60033;
+}
+/* line 495, ../sass/screen.scss */
+.eye.glyphicon-eye-open:hover {
+  color: #379f15;
+}
+
+/* line 504, ../sass/screen.scss */
+.a-center {
+  text-align: center;
+}
+
+/* line 508, ../sass/screen.scss */
+.a-right {
+  text-align: right;
+}
+
+/* line 512, ../sass/screen.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* line 516, ../sass/screen.scss */
+.ava-wrap {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+/* line 522, ../sass/screen.scss */
+.ava-wrap .btn {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 40%;
+}
+/* line 526, ../sass/screen.scss */
+.ava-wrap .btn.first {
+  width: 200px;
+  margin-top: 28%;
+}
+/* line 531, ../sass/screen.scss */
+.ava-wrap .btn.second {
+  width: 200px;
+  margin-top: 10px;
+}
+/* line 536, ../sass/screen.scss */
+.ava-wrap .btn.half {
+  width: 96px;
+}
+/* line 542, ../sass/screen.scss */
+.ava-wrap .ava-blink {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.75;
+  background: white;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+/* line 551, ../sass/screen.scss */
+.ava-wrap .ava-blink.black {
+  background: black;
+}
+/* line 555, ../sass/screen.scss */
+.ava-wrap .ava-blink.edit-profile {
+  -moz-box-shadow: inset 0 0 100px #6e96d1;
+  -webkit-box-shadow: inset 0 0 100px #6e96d1;
+  box-shadow: inset 0 0 100px #6e96d1;
+}
+/* line 559, ../sass/screen.scss */
+.ava-wrap .ava-blink.half {
+  -moz-border-radius: 300px 300px 0 0;
+  -webkit-border-radius: 300px;
+  border-radius: 300px 300px 0 0;
+  -moz-transform: translate(-17.7%, 14.6%) rotate(-45deg);
+  -ms-transform: translate(-17.7%, 14.6%) rotate(-45deg);
+  -webkit-transform: translate(-17.7%, 14.6%) rotate(-45deg);
+  transform: translate(-17.7%, 14.6%) rotate(-45deg);
+  -moz-box-shadow: inset 0 0 50px 50px #6e96d1;
+  -webkit-box-shadow: inset 0 0 50px 50px #6e96d1;
+  box-shadow: inset 0 0 50px 50px #6e96d1;
+  height: 150px;
+  width: 300px;
+}
+
+/* line 569, ../sass/screen.scss */
+.path-icon {
+  height: 67px;
+  width: 67px;
+  position: absolute;
+  right: 0;
+}
+/* line 575, ../sass/screen.scss */
+.path-icon.clickable {
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  opacity: 0.5;
+  cursor: pointer;
+}
+/* line 580, ../sass/screen.scss */
+.path-icon.clickable:hover {
+  opacity: 1;
+}
+/* line 585, ../sass/screen.scss */
+.path-icon.left {
+  left: 0;
+}
+
+/* line 590, ../sass/screen.scss */
+#name-lastname {
+  text-align: center;
+  color: white;
+}
+
+/* line 610, ../sass/screen.scss */
+input[type=text].icon, input[type=password].icon, input[type=email].icon {
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 70px;
+}
+/* line 615, ../sass/screen.scss */
+input[type=text].icon.compose, input[type=password].icon.compose, input[type=email].icon.compose {
+  background-image: url("../../img/icon/64/compose.png");
+}
+/* line 618, ../sass/screen.scss */
+input[type=text].icon.login, input[type=password].icon.login, input[type=email].icon.login {
+  background-image: url("../../img/icon/64/email.png");
+}
+/* line 621, ../sass/screen.scss */
+input[type=text].icon.profile, input[type=password].icon.profile, input[type=email].icon.profile {
+  background-image: url("../../img/icon/64/profile.png");
+}
+/* line 624, ../sass/screen.scss */
+input[type=text].icon.globe, input[type=password].icon.globe, input[type=email].icon.globe {
+  background-image: url("../../img/icon/64/globe.png");
+}
+/* line 627, ../sass/screen.scss */
+input[type=text].icon.mail, input[type=password].icon.mail, input[type=email].icon.mail {
+  background-image: url("../../img/icon/64/mail.png");
+}
+/* line 631, ../sass/screen.scss */
+input[type=text].icon.locked, input[type=password].icon.locked, input[type=email].icon.locked {
+  background-image: url("../../img/icon/64/locked.png");
+}
+/* line 635, ../sass/screen.scss */
+input[type=text].icon.unlocked, input[type=password].icon.unlocked, input[type=email].icon.unlocked {
+  background-image: url("../../img/icon/64/unlocked.png");
+}
+/* line 638, ../sass/screen.scss */
+input[type=text].icon.vk, input[type=password].icon.vk, input[type=email].icon.vk {
+  background-image: url("../../img/icon/64/vk.png");
+}
+/* line 641, ../sass/screen.scss */
+input[type=text].icon.twitter, input[type=password].icon.twitter, input[type=email].icon.twitter {
+  background-image: url("../../img/icon/64/twitter.png");
+}
+/* line 644, ../sass/screen.scss */
+input[type=text].icon.instagram, input[type=password].icon.instagram, input[type=email].icon.instagram {
+  background-image: url("../../img/icon/64/instagram.png");
+}
+
+/* line 653, ../sass/screen.scss */
+.edit-row hr {
+  width: 118.5%;
+  margin: 10px 0;
+  opacity: 0.3;
+}
+
+/* line 660, ../sass/screen.scss */
+.switchery {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  vertical-align: middle;
+  width: 50px;
+}
+/* line 671, ../sass/screen.scss */
+.switchery > small {
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  height: 30px;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+
+/* line 682, ../sass/screen.scss */
+.additional-settings {
+  margin: 15px auto;
+  font-family: 'RaleWayRegular', sans-serif;
+  font-size: 22px;
+  color: white;
+}
+/* line 687, ../sass/screen.scss */
+.additional-settings td {
+  padding: 10px 0;
+  text-align: left !important;
+}
+/* line 690, ../sass/screen.scss */
+.additional-settings td span {
+  margin-left: 5px;
+}
+/* line 694, ../sass/screen.scss */
+.additional-settings td img {
+  height: 32px;
+  width: 32px;
+}
+/* line 699, ../sass/screen.scss */
+.additional-settings tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 707, ../sass/screen.scss */
+.btn.br5 {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 711, ../sass/screen.scss */
+.btn.save {
+  width: 87%;
+}
+/* line 715, ../sass/screen.scss */
+.btn.dialog {
+  width: 165px;
+}
+
+/* line 727, ../sass/screen.scss */
+.bootbox-body img, .modal-title img {
+  height: 42px;
+  width: 42px;
+  margin-right: 10px;
+}
+
+/* line 746, ../sass/screen.scss */
+.saved {
+  width: 87%;
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+/* line 752, ../sass/screen.scss */
+.subscription-arrow {
+  opacity: 0.8;
+  font-size: 20px;
+  top: 9px;
+}
+
+/* line 758, ../sass/screen.scss */
+.arrow-back {
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+}
+/* line 763, ../sass/screen.scss */
+.arrow-back:hover {
+  color: #41ba18;
+}
+/* line 767, ../sass/screen.scss */
+.arrow-back.big {
+  color: white;
+  font-size: 35px;
+  opacity: 0.5;
+  top: 0;
+  line-height: 61px;
+}
+/* line 773, ../sass/screen.scss */
+.arrow-back.big:hover {
+  opacity: 1;
+}
+
+/* line 779, ../sass/screen.scss */
+.cursor-default {
+  cursor: default;
+}
+
+/* line 790, ../sass/screen.scss */
+h3 {
+  font-family: 'RaleWayRegular', sans-serif;
+}
+/* line 793, ../sass/screen.scss */
+h3.mg-top {
+  font-family: 'RaleWayLight', sans-serif;
+  margin-top: 20px;
+}
+/* line 798, ../sass/screen.scss */
+h3 .glyphicon {
+  margin-right: 8px;
+  display: inline;
+}
+
+/* line 808, ../sass/screen.scss */
+.navbar .nav > li .count {
+  position: absolute;
+  background: #e60033;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  height: 20px;
+  width: 20px;
+  border: 1px solid white;
+  top: 3px;
+  right: 3px;
+  color: white;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 20px;
+  z-index: 5;
+}
+/* line 828, ../sass/screen.scss */
+.navbar .nav > li .count.d1 {
+  font-size: 12px;
+}
+/* line 833, ../sass/screen.scss */
+.navbar .nav > li .glyphicon {
+	margin-right: 2px;
+}
+/* line 837, ../sass/screen.scss */
+.navbar .nav > li .glyphicon.inline {
+  font-size: 14px;
+  margin-right: 5px;
+  top: 1px;
+}
+
+/* line 854, ../sass/screen.scss */
+.form-group {
+  margin-bottom: 10px;
+}
+
+/* line 860, ../sass/screen.scss */
+fieldset.hidden-thoughts {
+  border-top: 1px dashed rgba(171, 171, 171, 0.7);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  display: block;
+  text-align: center;
+  margin: 0;
+  height: 50px;
+}
+/* line 870, ../sass/screen.scss */
+fieldset.hidden-thoughts legend {
+  padding: 0 10px;
+  width: auto;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'RaleWayMedium', sans-serif;
+  opacity: 0.6;
+}
+/* line 877, ../sass/screen.scss */
+fieldset.hidden-thoughts legend:hover {
+  opacity: 1;
+}
+
+/* line 885, ../sass/screen.scss */
+.glyphicon.big-icon {
+  margin: 0;
+  font-size: 23px;
+}
+
+/* line 891, ../sass/screen.scss */
+.comments-box {
+  -moz-transition: all 0.2s !important;
+  -o-transition: all 0.2s !important;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+  width: calc(98% - 184px) !important;
+  color: black !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 0 !important;
+  height: 20px !important;
+  overflow: hidden !important;
+  font-family: "RaleWayLight" !important;
+  padding: 18px 34px !important;
+  font-size: 18px !important;
+  resize: none !important;
+  outline: none !important;
+  margin: 0 !important;
+  -moz-border-radius: 5px 0 0 5px !important;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0 0 5px !important;
+}
+/* line 916, ../sass/screen.scss */
+.comments-box.loading {
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+  background-image: url("../../img/loader/spinner.gif") !important;
+  background-position: 99.5% center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* line 924, ../sass/screen.scss */
+.comments-box:focus {
+  background: white;
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* line 933, ../sass/screen.scss */
+.comment-button {
+  width: 60px;
+  max-height: 56px;
+  overflow: hidden;
+  padding: 18px 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-border-radius: 0 5px 5px 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 5px 5px 0 !important;
+}
+
+/* line 946, ../sass/screen.scss */
+.comment-row {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+  padding: 15px 0;
+  margin: 20px 0 10px;
+}
+
+/* line 953, ../sass/screen.scss */
+.bubble {
+  position: relative;
+  width: auto;
+  max-width: 60%;
+  min-height: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  border-radius: 22px;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 7.5px;
+  word-wrap: break-word;
+  font-family: "RaleWayMedium";
+  font-size: 16px;
+}
+/* line 973, ../sass/screen.scss */
+.bubble .icon {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  display: none;
+  cursor: pointer;
+}
+/* line 981, ../sass/screen.scss */
+.bubble .icon.remove:hover {
+  color: #e60033;
+}
+/* line 987, ../sass/screen.scss */
+.bubble .icon.restore:hover {
+  color: #379f15;
+}
+/* line 993, ../sass/screen.scss */
+.bubble:after {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: -15px;
+  border-style: solid;
+  border-width: 9px 15px 9px 0;
+  border-color: transparent rgba(255, 255, 255, 0.4);
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+/* line 1007, ../sass/screen.scss */
+.bubble:hover {
+  background: white;
+}
+/* line 1009, ../sass/screen.scss */
+.bubble:hover .icon {
+  display: block;
+}
+/* line 1012, ../sass/screen.scss */
+.bubble:hover:after {
+  border-color: transparent white;
+}
+/* line 1017, ../sass/screen.scss */
+.bubble.active {
+  background: white;
+}
+/* line 1019, ../sass/screen.scss */
+.bubble.active:after {
+  border-color: transparent white;
+}
+/* line 1024, ../sass/screen.scss */
+.bubble.right {
+  margin-left: 0;
+  margin-right: 7.5px;
+  float: right;
+}
+/* line 1029, ../sass/screen.scss */
+.bubble.right:after {
+  border-width: 9px 0 9px 15px;
+  left: auto;
+  right: -15px;
+}
+/* line 1036, ../sass/screen.scss */
+.bubble.deleted {
+  opacity: 0.25;
+}
+
+/* line 1041, ../sass/screen.scss */
+.comment-ava {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  float: left;
+  margin-top: 17px;
+  margin-right: 15px;
+}
+/* line 1047, ../sass/screen.scss */
+.comment-ava .glyphicon-user {
+  color: white;
+}
+/* line 1051, ../sass/screen.scss */
+.comment-ava.right {
+  float: right;
+  margin-right: 0;
+  margin-left: 15px;
+}
+/* line 1057, ../sass/screen.scss */
+.comment-ava.deleted {
+  opacity: 0.25;
+}
+
+/* line 1063, ../sass/screen.scss */
+.sociallink.inactive {
+  display: none;
+}
+/* line 1067, ../sass/screen.scss */
+.sociallink.disabled {
+  cursor: default;
+}
+/* line 1069, ../sass/screen.scss */
+.sociallink.disabled .SocialIconFill {
+  opacity: 0.15 !important;
+}
+
+/* line 1075, ../sass/screen.scss */
+.loading-messages {
+  width: 60%;
+  height: 50px;
+  text-align: center;
+  background: white;
+  padding-top: 25px;
+  margin: 50px auto;
+  font-family: "RaleWayRegular";
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  opacity: 0.5;
+}
+/* line 1086, ../sass/screen.scss */
+.loading-messages img {
+  margin-right: 10px;
+}
+
+/* line 1091, ../sass/screen.scss */
+.more-dots {
+  position: absolute;
+  right: 2%;
+  display: none;
+  color: white;
+}
+/* line 1096, ../sass/screen.scss */
+.more-dots.blue {
+  color: #0074e6;
+}
+
+/* line 1101, ../sass/screen.scss */
+.bar-eye {
+  position: absolute;
+  right: 7%;
+  top: 0;
+  color: white;
+  display: none;
+}
+/* line 1107, ../sass/screen.scss */
+.bar-eye.blue {
+  color: #0074e6;
+}
+
+/* line 1115, ../sass/screen.scss */
+.adjective-bar:hover .more-dots, .adjective-bar:hover .bar-eye {
+  display: block;
+}
+
+/* line 1121, ../sass/screen.scss */
+.tools-top-div {
+  text-align: right;
+  color: white;
+  padding-right: 4px;
+  margin-bottom: 11px;
+  font-family: 'RaleWayMedium';
+}
+
+/* line 1129, ../sass/screen.scss */
+span.chat {
+  display: block;
+  position: relative;
+  z-index: -999;
+  font-size: 18px;
+  font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+}
+/* line 1135, ../sass/screen.scss */
+span.chat .glyphicon {
+  margin-right: 4px;
+  top: 3px;
+}
+
+/* line 1142, ../sass/screen.scss */
+.adjective-bar.update {
+  height: 50px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 1144, ../sass/screen.scss */
+.adjective-bar.update .update-info {
+  color: black;
+  top: 15px;
+  position: absolute;
+  font-family: 'RaleWayMedium';
+  font-size: 18px;
+  width: auto;
+  display: inline-block;
+}
+/* line 1154, ../sass/screen.scss */
+.adjective-bar.update .bar {
+  background-color: #149bdf;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  -webkit-background-size: 40px 40px;
+  -moz-background-size: 40px 40px;
+  -o-background-size: 40px 40px;
+  background-size: 40px 40px;
+}
+/* line 1167, ../sass/screen.scss */
+.adjective-bar.update.active .bar {
+  -moz-animation: progress-bar-stripes 2s linear infinite;
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+/* line 1174, ../sass/screen.scss */
+.admin-user-list {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "RaleWayRegular";
+}
+/* line 1179, ../sass/screen.scss */
+.admin-user-list .transp {
+  opacity: 0.2;
+}
+/* line 1182, ../sass/screen.scss */
+.admin-user-list a {
+  color: white;
+}
+/* line 1184, ../sass/screen.scss */
+.admin-user-list a:hover {
+  text-decoration: underline;
+}
+/* line 1188, ../sass/screen.scss */
+.admin-user-list .name-link {
+  margin-right: 10px;
+  display: inline-block;
+  width: 250px;
+}
+/* line 1194, ../sass/screen.scss */
+.admin-user-list .badge {
+  font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+  padding: 5px 15px;
+  min-width: 75px;
+  text-align: center;
+  font-size: 18px;
+}
+/* line 1200, ../sass/screen.scss */
+.admin-user-list .badge a {
+  color: white;
+}
+/* line 1204, ../sass/screen.scss */
+.admin-user-list .badge .glyphicon {
+  font-size: 13px;
+  top: 0px;
+}
+/* line 1210, ../sass/screen.scss */
+.admin-user-list .badge-info {
+  min-width: 0;
+  text-align: left;
+}
+
+/* line 1216, ../sass/screen.scss */
+.admin-control-buttons {
+  margin-bottom: 20px;
+  width: 50%;
+  text-align: center;
+}
+/* line 1220, ../sass/screen.scss */
+.admin-control-buttons .glyphicon {
+  margin: 0;
+}
+/* line 1223, ../sass/screen.scss */
+.admin-control-buttons .btn {
+  min-width: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 1230, ../sass/screen.scss */
+.sql-input {
+  width: 50% !important;
+  height: 3px !important;
+  font-size: 16px !important;
+  font-family: "RaleWayMedium" !important;
+  float: right;
+}
+
+/* line 1239, ../sass/screen.scss */
+.online-status {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  bottom: 2%;
+  right: 8.8%;
+  cursor: default !important;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 1250, ../sass/screen.scss */
+.online-status.online {
+  background: #54e225;
+  box-shadow: 0 0 7px 2px #41bb19;
+}
+/* line 1254, ../sass/screen.scss */
+.online-status.offline {
+  background: rgba(255, 255, 255, 0.4);
+}

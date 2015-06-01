@@ -1,0 +1,41 @@
+RewriteEngine On
+
+RewriteBase /vliker
+
+# На эти папки не использовать правила
+RewriteRule ^(css|js|img|fonts|compass)($|/) - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+###### Правила ######
+
+# Вход, регистрация
+#RewriteRule ^register$ index.php?controller=login&action=register [QSA,L]
+#RewriteRule ^logout$ index.php?controller=login&action=logout [QSA,L]
+#RewriteRule ^login$ index.php?controller=login&action=login [QSA,L]
+
+# AJAX
+# RewriteRule ^ajax/([a-zA-Z]+)[/]?$ index.php?controller=ajax&action=Ajax$1 [QSA,L]
+
+# Заявки
+#RewriteRule ^requests/edit/([0-9]+)$ index.php?controller=request&action=edit&id=$1 [QSA,L]
+#RewriteRule ^requests/([a-zA-Z]+)[/]?$ index.php?controller=request&action=$1 [QSA,L]
+#RewriteRule ^requests[/]?$ index.php?controller=request&action=list [QSA,L]
+
+# Уведомления
+#RewriteRule ^notifications[/]?$ index.php?controller=notification&action=list [QSA,L]
+
+# API
+#RewriteRule ^api/([a-zA-Z]+)[/]?$ index.php?controller=api&action=$1 [QSA,L]
+
+# Tasks
+# RewriteRule ^task/([a-zA-Z]+)[/]?$ index.php?controller=task&action=test [QSA,L]
+RewriteRule ^task/([a-zA-Z]+)[/]?$ index.php?controller=task&action=Ajax$1 [QSA,L]
+
+
+# Контроллер меню
+RewriteRule ^menu/([a-zA-Z]+)[/]?$ index.php?controller=menu&action=$1 [QSA,L]
+
+# Если шо, переводим на логин
+RewriteRule ^[/]?$ index.php?controller=main&action=here [QSA,L]
