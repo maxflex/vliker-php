@@ -26,8 +26,10 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/retina.min.js"></script>
 	<script type="text/javascript" src="js/nprogress.js"></script>
+<!--
 	<script type="text/javascript" src="js/mask.js"></script>
 	<script type="text/javascript" src="js/inputmask.js"></script>
+-->
 	<script type="text/javascript" src="js/angular.js"></script>
 	<script type="text/javascript" src="js/angular-animate.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

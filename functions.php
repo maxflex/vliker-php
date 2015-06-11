@@ -25,6 +25,17 @@
 		return $db_connection;
 	}
 	
+	
+	/**
+	 * Возвращает соединение MemcacheD.
+	 * 
+	 */
+	function memcached() 
+	{
+		global $memcached;
+		return $memcached;
+	}
+	
 	/*
 	 * Создаем подключение к БД user_x
 	 */

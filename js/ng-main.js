@@ -31,6 +31,16 @@
 				// Выбираем меню
 				if ($scope.id_menu != id_menu) {
 					$scope.id_menu = id_menu	
+				} else {
+					// если нажали на тот же пункт меню
+					downAnimation()
+					$scope.id_menu 		= null
+					$scope.show_wall 	= false
+					$scope.show_stats 	= false
+					$scope.show_store 	= false
+					$scope.show_instr	= false
+					$scope.$apply()
+					return
 				}
 				
 				// Начинаем загрузку
@@ -49,20 +59,36 @@
 					}
 					// Статистика
 					case 2: {
+						$("#content").load("menu/construct", function(response) {
+							ajaxEnd()
+							$("#row-content").show().addClass("fadeInDown")
+							console.log(response);
+						});
 						$scope.show_stats = false
 						break
 					}
 					// Маджазин
 					case 3: {
+						$("#content").load("menu/construct", function(response) {
+							ajaxEnd()
+							$("#row-content").show().addClass("fadeInDown")
+							console.log(response);
+						});
 						$scope.show_store = false
 						break
 					}
 					// Инструкции (как пользоваться)
 					case 4: {
+						$("#content").load("menu/construct", function(response) {
+							ajaxEnd()
+							$("#row-content").show().addClass("fadeInDown")
+							console.log(response);
+						});
 						$scope.show_instr = false
 						break
 					}
 				}
+				
 				$scope.$apply()
 			}
 			
@@ -78,6 +104,7 @@
 					if (object === false) {
 						startAnimation()
 					    showContent(response)
+					    bindAfterLoad()
 					} else {
 						$scope.url_error = object.error;
 						$scope.$apply()	

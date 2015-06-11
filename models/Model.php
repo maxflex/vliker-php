@@ -115,7 +115,7 @@
 				WHERE true ".(!empty($params["condition"]) ? " AND ".$params["condition"] : "") // Если есть дополнительное условие выборки
 				.(!empty($params["order"]) ? " ORDER BY ".$params["order"] : "")				// Если есть условие сортировки
 				." LIMIT 1");
-	
+			
 			// Если запрос без ошибок и что-то нашлось
 			if ($result->num_rows)
 			{

@@ -1,14 +1,36 @@
 	var animation_speed = 300 // Скорость анимаций
 	
+	// Иконки
+	var CIRCLE_ICON_PATH = "img/circles/fullcolor/";
+	
+	
+	/**
+	 * Получить иконку.
+	 * 
+	 */
+	function getIcon(icon_name) {
+		return "<img src='" + CIRCLE_ICON_PATH + icon_name + ".png' class='circle-icon'>";
+	}
+	
+	
+	/**
+	 * Вставить glyphicon.
+	 * 
+	 */
+	function glyphIcon(class_name)
+	{
+		return "<span class='glyphicon glyphicon-" + class_name + "'></span>";
+	}
+	
 	// Влайкер. Автор: Массим.
 	$(document).ready(function() {
-	
+
 	})
 	
 	
 	
 	/**
-	 * Анимация перевода вверх.
+	 * Анимация перевода вверх (меню).
 	 * 
 	 */
 	function topAnimation() {
@@ -23,6 +45,27 @@
 */		
 		$("#animation-block, #likes-iframe").slideUp(animation_speed)
 		$("body").css({'overflow' : 'visible'})
+		//$("#row-buttons").delay(50).animate({"top" : "-375px"}, 350)
+
+	}
+	
+	/**
+	 * Анимация перевода вниз (меню).
+	 * 
+	 */
+	function downAnimation() {
+/*
+		$("#animation-block").addClass("animated fadeOutUpBig")
+			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				console.log("ANIMATION END")
+				$(this).hide()
+				
+			}
+		)
+*/		
+		$("#animation-block, #likes-iframe").slideDown(animation_speed)
+		$("#row-content").hide()
+		$("body").css({'overflow' : 'hidden'})
 		//$("#row-buttons").delay(50).animate({"top" : "-375px"}, 350)
 
 	}
@@ -106,4 +149,42 @@
 		{
 			return false;
 		}             
+	}
+	
+    /**
+	 * Нотифай с сообщением об ошибке.
+	 *
+	 */
+	function notifyError(message) {
+		$.notify({'message': message, icon: "glyphicon glyphicon-remove"}, {
+			type : "danger",
+			allow_dismiss : false,
+			placement: {
+				from: "bottom",
+				align: "center"
+			},
+			animate: {
+				enter: 'animated shake',
+				exit: 'animated fadeOutUp'
+			},
+		});
+	}
+	
+	/**
+	 * Нотифай с сообщением об успехе.
+	 *
+	 */
+	function notifySuccess(message) {
+		$.notify({'message': message, icon: "glyphicon glyphicon-ok"}, {
+			type : "success",
+			allow_dismiss : false,
+			placement: {
+				from: "bottom",
+				align: "center"
+			},
+			animate: {
+				enter: 'animated fadeInDown',
+				exit: 'animated fadeOutUp'
+			},
+		});
 	}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <style>
+	    a, a:visited {
+		    font-size: 40px;
+		    color: black;
+		    cursor: pointer;
+	    }
+	    
+	    a:hover {
+		    color: red;
+	    }
+	    
+	    a:focus {
+		    color: black;
+	    }
+	    
+	    a:active {
+		    color: green;
+	    }
+	</style>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+/*
+			setInterval(function() {
+				console.log("triggered")
+				$("a").trigger("mouseout").trigger("blur")
+			}, 2500)
+*/
+			
+			$(window)
+				.on("focus", function() {
+					console.log("WINDOW FOCUS")
+					$(this).focus()
+				})
+				.on("blur", function() {
+					console.log("WINDOW BLUR")
+				})
+			
+			$("a")
+				.on("mousedown", function() {
+					window.open("http://ya.ru")
+				})
+				.on("mouseenter", function() {
+					console.log("Mouse Enter")
+				})
+				.on("mouseout", function() {
+					console.log("Mouse out")
+				})
+				.on("focus", function() {
+					console.log("FOCUS")
+				})
+				.on("blur", function() {
+					console.log("BLUR")
+				})
+		})
+	</script>
+</head>
+
+<body>
+	<center>
+<!-- 	<a href="http://ya.ru" target="_blank">HERE</a> -->
+	<a>LINK</a>
+	</center>
+</body>
+</html>

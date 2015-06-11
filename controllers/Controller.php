@@ -80,7 +80,6 @@
 			include_once(BASE_ROOT."/views/".(!empty($this->_viewsFolder) ? $this->_viewsFolder."/" : "")."{$view}.php");
 		}
 		
-		
 		/*
 		 * Редирект
 		 */
@@ -104,6 +103,15 @@
 		{
 			header('Location: '.$_SERVER['REQUEST_URI']);
 		}
+		
+		
+/*
+		public function pager($ObjectsCollectoin) {
+			foreach ($ObjectsCollectoin as $Object) {
+				
+			}
+		}
+*/
 		
 		/*
 		 * Указываем заголовк HTML

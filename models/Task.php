@@ -81,9 +81,57 @@
 		}
 		
 		
+		
+		/**
+		 * Функция проверяет массив с лайками на валидность.
+		 * 
+		 * $task_data – данные по задаче, включая её ID, события, проверки, время, потраченное на простановку лайков и тд. 
+		 * @return array с ID задач, куда надо поставить лайки
+		 */
+		public static function verifyLikes($task_data)
+		{
+			// Количество замечаний (подозрительных лайков)
+			$warnings = 0;
+			
+			foreach ($task_data as $task) {
+				// Проверяем события лайка
+				// Должен быть сначала ME => MD => WB => WF
+				// как на картинке: https://pp.vk.me/c621829/v621829117/2c6cb/B7W1Exkpw28.jpg
+				// (только MC заменен на MD – Mouse Down)
+				$events_string = implode(" => ", $task["an"]);
+				
+				if ($events_string != "ME => MD => WB => WF") {
+					$warnings++;
+					continue;
+				}
+				
+				// Проверяем время, затраченное на простановку лайка
+				// (время между событиями window.blur и window.focus)
+				// Время – от 2х секунд до 2х минут
+				$time = floor($task["ts"] / 1000);
+				
+				if ($time < 2 || $time > (2 * 60)) {
+					$warnings++;
+					continue;	
+				}
+				
+				// Проверяем, был ли MOUSEMOVE, двигал ли пользователь мышью вообще?
+				// если двигал, то строка будет начинаться с 3x
+				if (strpos($task["ce"], "3x") !== 0) {
+					$warnings++;
+					continue;	
+				}
+				
+				// Задача прошла все проверки, добавляем ее в валидные
+				$valid_task_ids[] = $task["id"];
+			}
+			
+			return $valid_task_ids;	
+		}
+		
 		/**
 		 * Поставить лайк задачам.
-		 * 
+		 *
 		 */
 		public static function like($task_ids)
 		{
@@ -92,6 +140,22 @@
 			
 			// Завершаем выполненные задачи
 			static::dbConnection()->query("UPDATE ".static::$mysql_table." SET active=0 WHERE id IN (". implode(",", $task_ids) .") AND likes>=needed");
+			
+			// Сохраняем ID последней просмотренной в БД
+			User::fromSession()->saveLastSeenTask();
+		}
+				
+		/**
+		 * Начислить жалобы задачам.
+		 * 
+		 */
+		public static function report($task_report_ids)
+		{
+			// Ставим лайки задачам
+			static::dbConnection()->query("UPDATE ".static::$mysql_table." SET reports=(reports + 1) WHERE id IN (". implode(",", $task_report_ids) .")");
+			
+			// Завершаем задачи, где репортов больше трёх
+			static::dbConnection()->query("UPDATE ".static::$mysql_table." SET active=0 WHERE id IN (". implode(",", $task_report_ids) .") AND reports>=3");
 		}
 
 		
@@ -172,7 +236,7 @@
 				$task_json = json_encode($this->dbData(["id", "url"]));
 				
 				echo "
-					<img src='".self::THUMBNAIL_SERVICE."{$this->url}' class='thumbnail' onclick='taskClick(this, "
+					<img src='".self::THUMBNAIL_SERVICE."{$this->url}' class='thumbnail' onmousedown='clickTask(this, "
 						. $task_json .")'>
 				";
 			}
