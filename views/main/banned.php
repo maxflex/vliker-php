@@ -9,7 +9,7 @@
 </style>
 <div class="banned-div">
 	<div class="banned-div-content">
-		<h2>Вы заморожены на сутки</h2>
+		<h2>Вы заморожены на <?= User::banedTimeText() ?></h2>
 		<div class="picture-div animated bounce">
 			<img src="img/pictures/cry_dog.png">
 		</div>

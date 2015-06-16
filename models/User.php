@@ -25,6 +25,20 @@
 		
 		
 		/**
+		 * На сколько заморожен пользователь.
+		 * 
+		 * @return строка – от "10 минут" до "сутки"
+		 */
+		public static function bannedTimeText()
+		{
+			if (self::ipBanned()) {
+				$ban_info =  memcached()->get(realIp());
+				
+				return $ban_info["details"]["text"];
+			}
+		}
+		
+		/**
 		 * Инфа о бане по ID пользователя.
 		 * если установлен $params[ip] – поиск по IP
 		 * если установлен $params[id] – поиск по ID
@@ -146,14 +160,64 @@
 				"warnings"	=> $warnings,
 				"time"		=> now(),
 				"browser"	=> $_SERVER['HTTP_USER_AGENT'],
+				"task"		=> $this->Task->dbData(["url", "url_original"]), 
 			];
-			
-			// добавить IP в бан на сутки
-			memcached()->set(realIp(), $ban_info, 60 * 60 * 24);
 			
 			// начисляем кол-во банов пользователю
 			$this->banned++;
 			$this->save("banned");
+			
+			// Устанавливаем время бана в зависимости от того, в какой раз банится пользователь
+			switch ($this->banned) {
+				case 1: {
+					$ban_text = "10 минут";
+					$ban_time = 60 * 10;	// 10 минут
+					break;
+				}
+				case 2: {
+					$ban_text = "30 минут";
+					$ban_time = 60 * 30;	// 30 минут
+					break;
+				}
+				case 3: {
+					$ban_text = "один час";
+					$ban_time = 60 * 60;	// 1 час
+					break;
+				}
+				case 4: {
+					$ban_text = "три часа";
+					$ban_time = 60 * 60 * 3; // 3 часа
+					break;
+				}
+				case 5: {
+					$ban_text = "6 часов";
+					$ban_time = 60 * 60 * 6; // 6 часов
+					break;
+				}
+				case 6:
+				case 7:
+				case 8:
+				case 9: {
+					$ban_text = "12 часов";
+					$ban_time = 60 * 60 * 12; // 12 часов
+					break;
+				}
+				// 10 банов и более – на сутки
+				default: {
+					$ban_text = "сутки";
+					$ban_time = 60 * 60 * 24; // сутки
+				}
+			}
+			
+			// Информация по времени и количеству банов
+			$ban_info["details"] = [
+				"time"	=> ($ban_time / 3600), // время бана в часах
+				"count"	=> $this->banned,
+				"text"	=> $ban_text,
+			];
+			
+			// добавить IP в бан на сутки
+			memcached()->set(realIp(), $ban_info, $ban_time);
 			
 			exit();
 		}
