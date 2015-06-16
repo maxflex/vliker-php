@@ -1,7 +1,6 @@
-
 angular.module("VLiker",["ngAnimate"]).filter('reverse',function(){return function(items){return items.slice().reverse();};}).controller("MainCtrl",function($scope){$scope.example_links=["http://vk.com/photo236886_332","http://vk.com/wall123123552"]
 $scope.example_link=$scope.example_links[Math.floor(Math.random()*$scope.example_links.length)];$scope.goExample=function(){$scope.example_clicked=true
-$scope.url=$scope.example_link}
+$scope.url=$("#example-link").text()}
 $scope.goMenu=function(id_menu){if(!$scope.id_menu){topAnimation();}
 if($scope.id_menu!=id_menu){$scope.id_menu=id_menu}else{downAnimation()
 $scope.id_menu=null

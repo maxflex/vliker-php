@@ -17,7 +17,7 @@
 			// Перейти к примеру
 			$scope.goExample = function() {
 				$scope.example_clicked = true
-				$scope.url = $scope.example_link
+				$scope.url = $("#example-link").text()
 			}
 			
 			// Перейти по пункту меню
