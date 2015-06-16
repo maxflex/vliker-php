@@ -6,7 +6,7 @@
 		
 		// Заголовок по умолчанию
 		protected $_html_title	= "vLiker — Накрутка сердечек/лайков ВКонтакте бесплатно онлайн";
-		protected $_add_title	= " | "; // Будет добавляться к TITLE текущей страницы
+		protected $_add_title	= "vLiker — Накрутка сердечек/лайков ВКонтакте бесплатно онлайн"; // Будет добавляться к TITLE текущей страницы
 		
 		// Заголовок таба
 		private $_tab_title = "";
@@ -117,12 +117,12 @@
 		 * Указываем заголовк HTML
 		 * $add_website_name – добавлять $_add_title к указанному $title 
 		 */
-		protected function htmlTitle($title, $add_website_name = false)
+		protected function setTitle($title, $add_website_name = false)
 		{
 			$this->_html_title = $title;
 			
 			if ($add_website_name) {
-				$this->_html_title .= $this->_add_title;
+				$this->_html_title .= " | ".$this->_add_title;
 			}
 		}
 		

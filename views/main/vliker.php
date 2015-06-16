@@ -23,7 +23,21 @@
 	<div class="row" id="row-example">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8 example-text">
-			<span ng-hide="url_error || example_clicked" class="text-primary animate-show">Например, <span id="example-link" ng-click="goExample()">{{example_link}}</span></span>
+			<span ng-hide="url_error || example_clicked" class="text-primary animate-show">
+				<?php
+					// если есть последняя задача
+					if (Task::lastTask()) {
+					?> 
+						Вы недавно накручивали на <span id="example-link" ng-click="goExample()"><?= Task::lastTask() ?></span>
+					<?php
+					// если нет, отображаем пример
+					} else {
+					?> 
+						Например, <span id="example-link" ng-click="goExample()">{{example_link}}</span>
+					<?php	
+					}
+				?>
+			</span>
 			<span ng-show="url_error" class="text-error animate-show">
 				<span class="glyphicon glyphicon-remove"></span>{{url_error}}
 			</span>

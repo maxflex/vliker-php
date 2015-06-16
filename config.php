@@ -25,7 +25,7 @@
 	}
 		
 	// Конфигурация ошибок (error_reporing(0) - отключить вывод ошибок)
-	error_reporting(E_ALL);
+	error_reporting(81);
 	
 	// Открываем соединение с основной БД
 	$db_connection = new mysqli(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_PREFIX."vliker");

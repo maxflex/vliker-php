@@ -16,7 +16,8 @@
 		{
 			parent::__construct($array);
 			
-			// Сокращаем url сразу
+			// Сокращаем url сразу и запоминаем оригинальный
+			$this->url_original = $this->url;
 			$this->url = self::shortenUrl($this->url);
 		}
 		
@@ -66,6 +67,22 @@
 		
 		
 		/**
+		 * Получить последнюю задачу накрутки.
+		 * 
+		 */
+		public static function lastTask()
+		{
+			$last_task = $_COOKIE["last_task"];
+			
+			if ($last_task) {
+				return $last_task;
+			} else {
+				return false;
+			}
+		}
+		
+		
+		/**
 		 * Найти задачу по URL.
 		 *
 		 */
@@ -91,9 +108,14 @@
 		public static function verifyLikes($task_data)
 		{
 			// Количество замечаний (подозрительных лайков)
-			$warnings = 0;
+			$warnings = [];
 			
 			foreach ($task_data as $task) {
+				// Блокируем пользователя, если есть X и более замечаний
+				if (count($warnings) >= 5) {
+					User::fromSession()->ban($warnings);	
+				}
+				
 				// Проверяем события лайка
 				// Должен быть сначала ME => MD => WB => WF
 				// как на картинке: https://pp.vk.me/c621829/v621829117/2c6cb/B7W1Exkpw28.jpg
@@ -101,16 +123,17 @@
 				$events_string = implode(" => ", $task["an"]);
 				
 				if ($events_string != "ME => MD => WB => WF") {
-					$warnings++;
+					$warnings[] = ["Неверная последовательность событий" => $events_string];
 					continue;
 				}
 				
 				// Проверяем время, затраченное на простановку лайка
 				// (время между событиями window.blur и window.focus)
-				// Время – от 2х секунд до 2х минут
+				// Разрешенное время – от 1 секунды до 2х минут
 				$time = floor($task["ts"] / 1000);
 				
-				if ($time < 2 || $time > (2 * 60)) {
+				if ($time < 1 || $time > (2 * 60)) {
+					$warnings[] = ["Неверное время простановки лайка" => ($task["ts"] / 1000)];
 					$warnings++;
 					continue;	
 				}
@@ -118,7 +141,7 @@
 				// Проверяем, был ли MOUSEMOVE, двигал ли пользователь мышью вообще?
 				// если двигал, то строка будет начинаться с 3x
 				if (strpos($task["ce"], "3x") !== 0) {
-					$warnings++;
+					$warnings[] = ["Движение мышью отсутствует" => $task["ce"]];
 					continue;	
 				}
 				
@@ -151,7 +174,7 @@
 		 */
 		public static function report($task_report_ids)
 		{
-			// Ставим лайки задачам
+			// Ставим репорт задачам
 			static::dbConnection()->query("UPDATE ".static::$mysql_table." SET reports=(reports + 1) WHERE id IN (". implode(",", $task_report_ids) .")");
 			
 			// Завершаем задачи, где репортов больше трёх
@@ -211,6 +234,9 @@
 			if ($this->needed >= 3) {
 				$this->active = 1;
 				$this->save();
+				
+				// Сохраняем задачу последней накрутки, чтобы предлагать ее вместо примера
+				setcookie("last_task", $this->url, cookieTime(), "/");
 			}
 		}
 		

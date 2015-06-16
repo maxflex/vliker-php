@@ -41,7 +41,7 @@
 </div>
 
 <div class="row" id="row-process-control">
-	<div class="col-sm-12" style="margin-top: 20px; text-align: center">
+	<div class="col-sm-12" style="text-align: center">
 		<div class="btn-group btn-group-justified">
 			<div class="btn-group" role="group">
 	        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

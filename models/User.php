@@ -19,7 +19,30 @@
 		 */
 		public static function ipBanned()
 		{
-			return memcached()->get(realIp());
+//			return (memcached()->get(realIp()) !== false || memcached()->getResultCode() != Memcached::RES_NOTFOUND);
+			return (memcached()->get(realIp()) !== false);
+		}
+		
+		
+		/**
+		 * Инфа о бане по ID пользователя.
+		 * если установлен $params[ip] – поиск по IP
+		 * если установлен $params[id] – поиск по ID
+		 * 
+		 */
+		public static function banInfo($params)
+		{
+			extract($params);
+			
+			// Если установлен IP
+			if (isset($ip)) {
+				$ban_info = memcached()->get($ip);
+			} else {
+				$User = User::findById($id);
+				$ban_info = memcached()->get($User->ip);
+			}
+			
+			preType($ban_info);
 		}
 		
 		/**
@@ -114,12 +137,19 @@
 		
 		/**
 		 * Бан пользователя на сутки по MEMCACHED.
-		 * 
+		 * $ban_info – массив с инфой по бану
 		 */
-		public function ban()
+		public function ban($warnings)
 		{
+			$ban_info = [
+				"id_user"	=> $this->id,
+				"warnings"	=> $warnings,
+				"time"		=> now(),
+				"browser"	=> $_SERVER['HTTP_USER_AGENT'],
+			];
+			
 			// добавить IP в бан на сутки
-			memcached()->set(realIp(), true, 60 * 60 * 24);
+			memcached()->set(realIp(), $ban_info, 60 * 60 * 24);
 			
 			// начисляем кол-во банов пользователю
 			$this->banned++;
@@ -127,6 +157,16 @@
 			
 			exit();
 		}
+		
+		
+		/**
+		 * Разбанить пользователя.
+		 *
+		 */
+		public function unban()
+		{
+			memcached()->delete(realIp());
+		}  
 		
 		/**
 		 * Получить ID пользователя. Если ID не установлен, то надо создать пользователя в БД
@@ -267,8 +307,7 @@
 			$this->token = md5(self::SALT . $this->getId()  . self::SALT);
 			
 			// Remember me token в КУКУ
-			$cookie_time = time() + 3600 * 24 * 30 * 12 * 2; // час - сутки - месяц * 3 * 2 = КУКА на 2 года
-			setcookie("vtoken", $this->token . $this->getId(), $cookie_time, "/");	// КУКА ТОКЕНА (первые 16 символов - токен, последние - id_user)
+			setcookie("vtoken", $this->token . $this->getId(), cookieTime(), "/");	// КУКА ТОКЕНА (первые 16 символов - токен, последние - id_user)
 		}
 		
 

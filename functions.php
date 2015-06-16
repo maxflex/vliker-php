@@ -36,6 +36,17 @@
 		return $memcached;
 	}
 	
+	
+	/**
+	 * Время жизни куки.
+	 * 
+	 */
+	function cookieTime()
+	{
+		$cookie_time = time() + 3600 * 24 * 30 * 12 * 2; // час - сутки - месяц * 3 * 2 = КУКА на 2 года
+		return $cookie_time;
+	}
+	
 	/*
 	 * Создаем подключение к БД user_x
 	 */

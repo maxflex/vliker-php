@@ -1,3 +1,12 @@
+<style>
+	.likes-iframe, iframe {
+		display: none !important;
+	}
+	a:hover {
+		color: white !important;
+		text-decoration: none !important;
+	}
+</style>
 <div class="banned-div">
 	<div class="banned-div-content">
 		<h2>Вы заморожены на сутки</h2>
