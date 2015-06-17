@@ -92,8 +92,7 @@ body {
 
 div[role="alert"] {
   text-align: center;
-  width: 500px;
-  bottom: 50px !important; }
+  width: 500px; }
 
 ul.dropdown-menu a {
   cursor: pointer; }
@@ -201,6 +200,7 @@ hr {
 */ }
 
 #start-button {
+  max-height: 43px;
   text-transform: uppercase;
   outline: none; }
   #start-button:hover {

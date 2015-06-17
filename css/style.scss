@@ -121,7 +121,7 @@ body {
 div[role="alert"] {
 	text-align: center;
 	width: 500px;
-	bottom: 50px !important;
+//	bottom: 50px !important;
 }
 
 ul.dropdown-menu {
@@ -252,6 +252,7 @@ hr {
 //	margin-left: -3px;
 //	padding: 8px 18px;
 //	background-color: white;
+	max-height: 43px;
 	text-transform: uppercase;
 	outline: none;
 	&:hover {

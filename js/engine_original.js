@@ -82,6 +82,7 @@
 			.on("blur", function() {
 				// если уже был нажат блок
 				if (id_current_block != null) {
+					console.log(id_current_block)
 					// Если событие еще не было добавлено 
 					if ($.inArray(STATES.WB, animations[id_current_block]) === -1) {
 						// Добавляем событие
@@ -111,20 +112,6 @@
 				if ($.inArray(STATES.ME, animations[id_block]) === -1) {
 					// Добавляем событие
 					animations[id_block].push(STATES.ME)
-				}
-			})
-			// Учитываем событие MC
-			.on("mousedown", function() {
-				// Получаем ID блока (-1, потому что потом будем использовать для обращения в массиве)
-				id_block = $(this).attr("data-block-id") - 1
-				
-				// Запоминаем ID последнего нажатого блока
-				id_current_block = id_block
-				
-				// Если событие еще не было добавлено 
-				if ($.inArray(STATES.MD, animations[id_block]) === -1) {
-					// Добавляем событие
-					animations[id_block].push(STATES.MD)
 				}
 			})
 	}
@@ -168,6 +155,22 @@
 	 * 
 	 */
 	function clickTask(img, task) {
+		// Элемент DIV, внутри которого задача
+		div = $(img).parent()
+		
+		// Получаем ID блока (-1, потому что потом будем использовать для обращения в массиве)
+		id_block = div.attr("data-block-id") - 1
+		
+		// Запоминаем ID последнего нажатого блока
+		id_current_block = id_block
+		
+		// Учитываем событие MC
+		// Если событие еще не было добавлено 
+		if ($.inArray(STATES.MD, animations[id_block]) === -1) {
+			// Добавляем событие
+			animations[id_block].push(STATES.MD)
+		}
+		
 		// Запоминаем текущую задачу
 		current_task = task
 		
@@ -180,15 +183,11 @@
 		// Блокируем DIV
 		blockDiv()
 		
-		// Элемент DIV, внутри которого задача
-		div = $(img).parent()
-		
 		// Делаем анфокус дива (потому что глючит анимация и форсируется mouseenter после возвращения в окно)
 		div.trigger("mouseout")
 		
 		// Загружаем новую задачу в блок
-		id_block = div.attr("data-block-id");
-		loadNewTask(id_block)
+		loadNewTask(id_block + 1)
 	}
 	
 	
