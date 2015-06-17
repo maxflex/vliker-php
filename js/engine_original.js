@@ -82,7 +82,6 @@
 			.on("blur", function() {
 				// если уже был нажат блок
 				if (id_current_block != null) {
-					console.log(id_current_block)
 					// Если событие еще не было добавлено 
 					if ($.inArray(STATES.WB, animations[id_current_block]) === -1) {
 						// Добавляем событие

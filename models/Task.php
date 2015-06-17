@@ -18,7 +18,8 @@
 			
 			// Сокращаем url сразу и запоминаем оригинальный
 			$this->url_original = $this->url;
-			$this->url = self::shortenUrl($this->url);
+			$this->url_short	= self::shortenUrl($this->url, true);
+			$this->url 			= self::shortenUrl($this->url);
 		}
 		
 		
@@ -57,12 +58,18 @@
 		
 		/**
 		 * Сократить ссылку.
-		 * 
+		 *
+		 * $short_url – возвратить без vk.com (только вырезанную часть ссылки 'photo123_123')
 		 */
-		public static function shortenUrl($url){
+		public static function shortenUrl($url, $short_url = false){
 		  //preg_match("~[\S]*((photo|video|wall)[-]?[0-9]+[_][0-9]+)([\?]reply=[0-9]+)?[\S]*~",$lnk,$m);
 		   	preg_match("#((photo|video|wall)[-]?[0-9]+[_][0-9]+)([\?]reply=[0-9]+)?#", $url, $m);
-		    return "http://vk.com/".$m[1].$m[3];
+		   	
+			if ($short_url) {
+				return $m[1].$m[3];
+			} else {
+				return "http://vk.com/".$m[1].$m[3];  	
+			}
 		}
 		
 		

@@ -8,8 +8,7 @@ task_data.push({"id":current_task.id,"an":animations[id_current_block],"ce":CORE
 animations[id_current_block]=[]
 id_current_block=null
 CORE_ENGINE='0x000'
-unblockDiv()}}).on("blur",function(){if(id_current_block!=null){console.log(id_current_block)
-if($.inArray(STATES.WB,animations[id_current_block])===-1){animations[id_current_block].push(STATES.WB)
+unblockDiv()}}).on("blur",function(){if(id_current_block!=null){if($.inArray(STATES.WB,animations[id_current_block])===-1){animations[id_current_block].push(STATES.WB)
 TS=new Date().getTime();}}}).on("mousemove",function(){if(CORE_ENGINE=='0x000'){CORE_ENGINE=(1.5*2)+'x'+Math.round(100+Math.random()*(9*100-100))}})
 $(".vliker-block").on("mouseenter",function(){id_block=$(this).attr("data-block-id")-1
 if($.inArray(STATES.ME,animations[id_block])===-1){animations[id_block].push(STATES.ME)}})}
