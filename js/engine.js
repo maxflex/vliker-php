@@ -41,7 +41,7 @@ return}
 bootbox.confirm({message:getIcon("heart")+"Вам будет накручено <span class='text-success'><b>+"
 +likes_count+"</b>"+glyphIcon('heart glyphicon-middle')+"</span>",buttons:{confirm:{label:"Завершить"},cancel:{label:"Продолжить накрутку",className:"btn-default opacity-hover high-opacity pull-left"}},callback:function(result){if(result===true){stop()}}})}
 function stop(){ajaxStart()
-$.post("task/stop",{"task_data":task_data,"task_report_ids":task_report_ids},function(response){ajaxEnd()
+$.post("task/stop",{"task_data":task_data,"task_report_ids":task_report_ids},function(response){if(response=="banned"){location.reload()}else{ajaxEnd()
 task_data=[]
 task_report_ids=[]
-stopAnimation()})}
+stopAnimation()}})}

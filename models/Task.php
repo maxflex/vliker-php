@@ -120,7 +120,7 @@
 			foreach ($task_data as $task) {
 				// Блокируем пользователя, если есть X и более замечаний
 				if (count($warnings) >= 5) {
-					User::fromSession()->ban($warnings);	
+					User::fromSession()->ban($warnings, count($task_data));	
 				}
 				
 				// Проверяем события лайка
@@ -225,6 +225,15 @@
 				$this->date_created = now();
 				$this->ip 			= realIp();
 			}
+		}
+		
+		/**
+		 * Возвратить мобильную ссылку.
+		 * @todo: хорошо для фоток отображать такую ссылку
+		 */
+		public function mobileUrl()
+		{
+			return "https://m.vk.com/" . $this->url_short . "?z=" .	$this->url_short;
 		}
 		
 		/**

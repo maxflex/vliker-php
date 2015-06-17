@@ -152,8 +152,10 @@
 		/**
 		 * Бан пользователя на сутки по MEMCACHED.
 		 * $ban_info – массив с инфой по бану
+		 *
+		 * $liked_count – сколько лайков накрутил на момент бана
 		 */
-		public function ban($warnings)
+		public function ban($warnings, $liked_count)
 		{
 			$ban_info = [
 				"id_user"	=> $this->id,
@@ -161,6 +163,7 @@
 				"time"		=> now(),
 				"browser"	=> $_SERVER['HTTP_USER_AGENT'],
 				"task"		=> $this->Task->dbData(["url", "url_original"]), 
+				"likes"		=> $liked_count,
 			];
 			
 			// начисляем кол-во банов пользователю
@@ -219,7 +222,13 @@
 			// добавить IP в бан на сутки
 			memcached()->set(realIp(), $ban_info, $ban_time);
 			
-			exit();
+			// сохранить ID последней просмотренной задачи
+			// потому что после разбана опять будут показываться задачи, куда уже ставились лайки
+			// и пользователь может растеряться. если после бана решит исправиться и ставить лайки по-нормальному.
+			// а они уже стаят... может, подумает, надо снимать их. мало ли?
+			$this->saveLastSeenTask();
+			
+			exit("banned");
 		}
 		
 		

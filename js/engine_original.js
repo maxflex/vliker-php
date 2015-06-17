@@ -279,13 +279,17 @@
 			"task_data" 			: task_data,
 			"task_report_ids"	: task_report_ids
 		}, function(response) {
-			ajaxEnd()
-			
-			// Обнуляем задачи и репорты
-			task_data 		= []
-			task_report_ids	= []
-
-			// Возвращаем VLiker в исходное состояние
-			stopAnimation()
+			// если забанили пользователя
+			if (response == "banned") {
+				location.reload()
+			} else {
+				ajaxEnd()
+				// Обнуляем задачи и репорты
+				task_data 		= []
+				task_report_ids	= []
+	
+				// Возвращаем VLiker в исходное состояние
+				stopAnimation()	
+			}
 		})
 	}
