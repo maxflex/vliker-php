@@ -15,7 +15,7 @@
 		</div>
 			<div>Вы временно заморожены за подозрительную активность</div>
 			<div>Скорее всего, вы не ставили «мне нравится» пользователям</div>
-			<div style="margin-top: 25px"><a href="http://vk.com/write230824942" target="_blank">
+			<div style="margin-top: 25px"><a href="http://vk.com/write<?= SUPPORT_ID ?>" target="_blank">
 				Написать в поддержку клиентов</a>
 			</div>
 	</div>

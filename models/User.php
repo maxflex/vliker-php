@@ -150,6 +150,28 @@
 		
 		
 		/**
+		 * Получить задачи пользователя.
+		 * $get_percentage – получить проценты выполнения задачи?
+		 */
+		public function getTasks($count, $get_percentage = true)
+		{
+			$Tasks = Task::findAll([
+				"condition"	=> "id_user=" . $this->id,
+				"order"		=> "date_active DESC",
+				"limit"		=> $count,
+			]);
+			
+			// Добавляем проценты к задачам
+			if ($Tasks && $get_percentage) {
+				foreach ($Tasks as &$Task) {
+					$Task->Percentage = $Task->getPercentage();
+				}
+			}
+			
+			return $Tasks;
+		}
+		
+		/**
 		 * Бан пользователя на сутки по MEMCACHED.
 		 * $ban_info – массив с инфой по бану
 		 *

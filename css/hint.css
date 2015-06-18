@@ -69,7 +69,10 @@
     padding: 8px 10px;
     font-size: 12px;
     line-height: 12px;
-    white-space: nowrap; }
+//    white-space: nowrap; 
+	width: 222px;
+	text-align: center;
+}
 
 /**
  * source: hint-position.scss
@@ -103,10 +106,10 @@
 .hint--top:before {
   margin-bottom: -12px; }
 .hint--top:after {
-  margin-left: -18px; }
+  margin-left: -103px; }
 .hint--top:before, .hint--top:after {
   bottom: 100%;
-  left: 50%; }
+  left: 20%; }
 .hint--top:hover:after, .hint--top:hover:before, .hint--top:focus:after, .hint--top:focus:before {
   -webkit-transform: translateY(-8px);
   -moz-transform: translateY(-8px);

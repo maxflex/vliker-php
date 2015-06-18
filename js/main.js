@@ -44,7 +44,12 @@
 		)
 */		
 		$("#animation-block, #likes-iframe").slideUp(animation_speed)
-		$("body").css({'overflow' : 'visible'})
+		$("body").css({'overflow-y' : 'visible'})
+		$(".footer").addClass("animated fadeOutDown")
+			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated fadeOutDown navbar-fixed-bottom")
+			})
+		//navbar-fixed-bottom
 		//$("#row-buttons").delay(50).animate({"top" : "-375px"}, 350)
 
 	}
@@ -65,7 +70,11 @@
 */		
 		$("#animation-block, #likes-iframe").slideDown(animation_speed)
 		$("#row-content").hide()
-		$("body").css({'overflow' : 'hidden'})
+		$("body").css({'overflow-y' : 'hidden'})
+		$(".footer").addClass("navbar-fixed-bottom animated fadeInUp")
+			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated fadeInUp")
+			})
 		//$("#row-buttons").delay(50).animate({"top" : "-375px"}, 350)
 
 	}
@@ -84,9 +93,17 @@
 	 * Анимация конца накрутки.
 	 * 
 	 */
-	function stopAnimation()
+	function stopAnimation(menu_name)
 	{
 		$("#row-ads, #row-logo, #row-example, #row-menu, #likes-iframe").slideDown(animation_speed)
+		
+		// переход по меню после окончания анимаций
+		if (menu_name !== null) {
+			setTimeout(function() {
+				$("#menu-" + menu_name).click()
+			}, animation_speed + 100)
+		}
+		
 		hideContent()
 	}
 	

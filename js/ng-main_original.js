@@ -59,7 +59,7 @@
 					}
 					// Статистика
 					case 2: {
-						$("#content").load("menu/construct", function(response) {
+						$("#content").load("menu/stats", function(response) {
 							ajaxEnd()
 							$("#row-content").show().addClass("fadeInDown")
 							console.log(response);

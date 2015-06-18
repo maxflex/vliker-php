@@ -47,28 +47,29 @@
 <div class="row row-menu" id="row-menu">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-2">
-		<img src="img/icons/Message-Edit.png" 
+		<img src="img/icons/Message-Edit.png" id="menu-wall"
 			ng-src="{{(show_wall && id_menu == 1) && 'img/icons/ArrowUp@2x.png' || 'img/icons/Message-Edit@2x.png'}}"
 			ng-mouseenter="show_wall=true" ng-mouseleave="show_wall=false" ng-click="goMenu(1)" 
 			ng-class="{'no-opacity': id_menu == 1, 'hovered' : show_wall}">
 		<div ng-show="show_wall" class="animate-show-down menu-label" id="menu-label-1">{{id_menu == 1 && 'Назад' || 'Стена'}}</div>
 	</div>
 	<div class="col-sm-2">
-		<img src="img/icons/Heart.png" 
+		<div class="new-circle unseen hint--top" data-hint="Доступно новое меню"></div>
+		<img src="img/icons/Heart.png" id="menu-stats"
 			ng-src="{{(show_stats && id_menu == 2) && 'img/icons/ArrowUp@2x.png' || 'img/icons/Heart@2x.png'}}"
 			ng-mouseenter="show_stats=true" ng-mouseleave="show_stats=false" ng-click="goMenu(2)" 
 			ng-class="{'no-opacity': id_menu == 2, 'hovered' : show_stats}">
 		<div ng-show="show_stats" class="animate-show-down menu-label" id="menu-label-2">{{id_menu == 2 && 'Назад' || 'Статистика'}}</div>
 	</div>
 	<div class="col-sm-2">
-		<img src="img/icons/Shopping-Cart.png" 
+		<img src="img/icons/Shopping-Cart.png" id="menu-store"
 			ng-src="{{(show_store && id_menu == 3) && 'img/icons/ArrowUp@2x.png' || 'img/icons/Shopping-Cart@2x.png'}}"
 			ng-mouseenter="show_store=true" ng-mouseleave="show_store=false" ng-click="goMenu(3)" 
 			ng-class="{'no-opacity': id_menu == 3, 'hovered' : show_store}">
 		<div ng-show="show_store" class="animate-show-down menu-label" id="menu-label-3">{{id_menu == 3 && 'Назад' || 'Магазин'}}</div>
 	</div>
 	<div class="col-sm-2">
-		<img src="img/icons/Library-Books.png" 
+		<img src="img/icons/Library-Books.png" id="menu-instr"
 			ng-src="{{(show_instr && id_menu == 4) && 'img/icons/ArrowUp@2x.png' || 'img/icons/Library-Books@2x.png'}}"
 			ng-mouseenter="show_instr=true" ng-mouseleave="show_instr=false" ng-click="goMenu(4)" 
 			ng-class="{'no-opacity': id_menu == 4, 'hovered' : show_instr}">

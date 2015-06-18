@@ -249,7 +249,10 @@
 		
 		bootbox.confirm({
 			message: getIcon("heart") + "Вам будет накручено <span class='text-success'><b>+" 
-				+ likes_count + "</b>" + glyphIcon('heart glyphicon-middle') + "</span>",
+				+ likes_count + "</b>" + glyphIcon('heart glyphicon-middle') + "</span><div class='hint-text'>"
+				+ "Убедитесь, что ваша странца открыта для всех, чтобы пользователи смогли поставить Вам лайк"
+				+ "</div>",
+				//Все лайки будут проверены на предмет простановки. Непроставленные лайки не засчитаются.
 			buttons: {
 				confirm: {
 					label: "Завершить"
@@ -262,7 +265,7 @@
 			callback: function(result) {
 				// если нажали "завершить", то накручиваем лайки
 				if (result === true) {
-					stop()
+					stop("stats") // остановить накрутку и перейти в статистику
 				}
 			}   
 		})
@@ -270,9 +273,9 @@
 	
 	/**
 	 * Остановить накрутку и накрутить накрученные.
-	 * 
+	 * menu_name – в какое меню перейти по окончанию
 	 */
-	function stop() {
+	function stop(menu_name) {
 		ajaxStart()
 		// ставим лайки задачам
 		$.post("task/stop", {
@@ -289,7 +292,7 @@
 				task_report_ids	= []
 	
 				// Возвращаем VLiker в исходное состояние
-				stopAnimation()	
+				stopAnimation(menu_name)	
 			}
 		})
 	}

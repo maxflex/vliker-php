@@ -3,7 +3,7 @@
 	
 	# Настройки
 	$GLOBALS["settings"] = (object)[
-		"version" 			=> "1.2",				// Версия сайта (нужная для обновления кэша JS и CSS)
+		"version" 			=> "1.3",				// Версия сайта (нужная для обновления кэша JS и CSS)
 	];
 	
 	# Константы
@@ -14,6 +14,7 @@
 		"DB_PREFIX"		=> "",
 		"DEBUG"			=> true,
 		"NO_INTERNET"	=> true,
+		"SUPPORT_ID"	=> "230824942",
 		"BASE_ADDON"	=> "/vliker/",
 		"BASE_ROOT"		=> $_SERVER["DOCUMENT_ROOT"]."/vliker",
 	);

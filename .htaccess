@@ -33,6 +33,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteRule ^task/([a-zA-Z]+)[/]?$ index.php?controller=task&action=test [QSA,L]
 RewriteRule ^task/([a-zA-Z]+)[/]?$ index.php?controller=task&action=Ajax$1 [QSA,L]
 
+# CRON
+RewriteRule ^cron/([a-zA-Z]+)[/]?$ index.php?controller=cron&action=$1 [QSA,L]
 
 # Контроллер меню
 RewriteRule ^menu/([a-zA-Z]+)[/]?$ index.php?controller=menu&action=$1 [QSA,L]

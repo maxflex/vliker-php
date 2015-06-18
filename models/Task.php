@@ -12,6 +12,7 @@
 		
 		/*====================================== СИСТЕМНЫЕ ФУНКЦИИ ======================================*/
 		
+		// $mode определяет с какими переменными создавать объект
 		public function __construct($array = false)
 		{
 			parent::__construct($array);
@@ -136,11 +137,10 @@
 				
 				// Проверяем время, затраченное на простановку лайка
 				// (время между событиями window.blur и window.focus)
-				// Разрешенное время – от 1.5 секунды до 2х минут
-				// 1.5 секунды – СТРОГО, я тестил.
+				// Разрешенное время – от X секунд до 2x минут
 				$time = $task["ts"] / 1000;
 				
-				if ($time < 1.5 || $time > (2 * 60)) {
+				if ($time < 1.25 || $time > (2 * 60)) {
 					$warnings[] = ["Неверное время простановки лайка" => $time];
 					$warnings++;
 					continue;	
@@ -227,6 +227,100 @@
 			}
 		}
 		
+		public function afterFirstSave()
+		{
+			parent::afterFirstSave();
+			
+			echo "FIRST SAVING";
+			
+			// если сохраняем в первый раз
+			// добавляем изначальное значение очереди
+			$this->updateQueue();
+		}
+		
+		
+		/**
+		 * Обновить очередь для задачи.
+		 * 
+		 */
+		public function updateQueue()
+		{
+			// Получаем очередь
+			$this->queue = self::count([
+				"condition" => "active=1 AND likes=0 AND id<" . $this->id
+			]);
+			
+			// Обновляем в БД
+			$this->save("queue");
+		}
+		
+		
+		/**
+		 * Получить текстовую версию позиции в очереди.
+		 * 
+		 */
+		public function getQueue()
+		{
+			if ($this->queue == 0) {
+				return "<b>Cледующий</b>";
+			} else {
+				return "<b>". ($this->queue + 1) ."<sup><u>й</u></sup></b>";
+			}
+		}
+		
+		/**
+		 * Процентов накручено.
+		 * 
+		 * @return Object {
+		 * 	value	– цифра процентов, внутри прогресс-бара
+		 *	text 	– описание состояния (в очереди | в процессе | выполнено)
+		 *	class 	- класс для добавления прогреcc бару (1 – на прогесс-обертку, 2 - на сам бар)
+		 * }
+		 */
+		public function getPercentage()
+		{
+			
+			if ($this->likes <= 0) {
+//				$value	= 0;
+//				$text	= "В очереди, ". $this->needed ." накручено";
+				$text	= $this->getQueue() . " в очереди";
+				$label  = $this->needed." <span class='glyphicon glyphicon-heart'></span>";
+				$class1 = "progress-striped active";
+				$class2 = "progress-bar-default";
+			} else
+			if (!$this->active) {
+				// если задача неактивна и не все лайки доставлены, значит, заблокирована
+				if ($this->likes < $this->needed) {
+					$value	= round($this->likes / $this->needed * 100);
+					$class1	= "progress-striped";
+					$class2 = "progress-bar-danger";
+					$text	= "<span class='text-danger'>Заблокировано</span>";
+					$hint	= "Страница недоступна, удалена или закрыта – пользователи не могут попасть на неё и поставить лайк";
+					
+				} else {
+					$value	= 100;
+					$text	= "Выполнено";
+					$class2	= "progress-bar-primary";
+					$label	= $this->likes . "/" . $this->needed." <span class='glyphicon glyphicon-heart'></span>";
+				}
+			} else {
+				$value	= round($this->likes / $this->needed * 100);
+				$text	= "В процессе";
+				$class1 = "progress-striped active";
+				$class2 = "progress-bar-primary";
+				$label	= $this->likes . "/" . $this->needed." <span class='glyphicon glyphicon-heart'></span>";
+			}
+			
+			return (object)[
+				"value" => $value,
+				"text"	=> $text,
+				"class1"=> $class1,
+				"class2"=> $class2,
+				"label"	=> $label,
+				"hint"	=> $hint,
+			];
+		}
+		
 		/**
 		 * Возвратить мобильную ссылку.
 		 * @todo: хорошо для фоток отображать такую ссылку
@@ -241,6 +335,8 @@
 		 * 
 		 */
 		public function addLikes($count) {
+//			echo "\n COUNT IN FUNCTION=$count";
+			
 			// Увеличиваем кол-во лайков
 			$this->needed = $this->needed + $count;
 			
@@ -249,6 +345,7 @@
 			
 			// Если накручено больше 3х лайков, то активируем и сохраняем задачу
 			if ($this->needed >= 3) {
+//				echo "SAVING NEEDED=".$this->needed;
 				$this->active = 1;
 				$this->save();
 				
@@ -283,6 +380,18 @@
 						. $task_json .")'>
 				";
 			}
+		}
+		
+		
+		/**
+		 * Отобразить в статистике.
+		 * 
+		 */
+		public function statsDisplay()
+		{
+			echo "
+					<img src='".self::THUMBNAIL_SERVICE."{$this->url}'>
+				";	
 		}
 		
 		

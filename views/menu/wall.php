@@ -16,6 +16,10 @@
 	
 	<div id="vk_comments" style="padding: 10px"></div>
 -->
+
+<a href="http://vk.com/write<?= SUPPORT_ID ?>" target="_blank" class="dashed-hover" style="margin-bottom: 12px">
+	<h4 style="margin-bottom: 3px"><span class="glyphicon glyphicon-envelope" style="top: 3px; margin-right: 5px"></span>Написать в поддержку клиентов</h4>
+</a>
 	
 	<iframe class="comments-iframe" scrolling="no" frameborder="no" src="http://graffitistudio.ru/vliker_comments.php"></iframe>
 	</center>

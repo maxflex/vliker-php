@@ -14,7 +14,7 @@ ajaxStart();switch(id_menu){case 1:{$scope.show_wall=false
 $("#content").load("menu/wall",function(response){ajaxEnd()
 $("#row-content").show().addClass("fadeInDown")
 console.log(response);});break}
-case 2:{$("#content").load("menu/construct",function(response){ajaxEnd()
+case 2:{$("#content").load("menu/stats",function(response){ajaxEnd()
 $("#row-content").show().addClass("fadeInDown")
 console.log(response);});$scope.show_stats=false
 break}

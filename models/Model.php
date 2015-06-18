@@ -307,11 +307,12 @@
 				// echo "The query was: "."INSERT INTO ".static::$mysql_table." (".implode(",", $into).") VALUES (".implode(",", $values).")";
 				if ($result) {
 					$this->id = static::dbConnection()->insert_id; 	// Получаем ID
-					$this->isNewRecord = false;						// Уже не новая запись
+					$this->isNewRecord	= false;						// Уже не новая запись
+					$this->firstSaved	= true;							// Произошло первое сохранение
 					
 					// После сохранения 
-					if (method_exists($this, "afterSave")) {
-						$this->afterSave();								// После сохранения
+					if (method_exists($this, "afterFirstSave") && $this->firstSaved) {
+						$this->afterFirstSave(); // После первого сохранения
 					}
 					
 					return $this->id;
@@ -347,7 +348,10 @@
 				$result = static::dbConnection()->query("UPDATE ".static::$mysql_table." SET ".implode(",", $query)." WHERE id=".$this->id);
 				
 				if ($result) {
-					$this->afterSave();	// После сохранения
+					// После сохранения 
+					if (method_exists($this, "afterFirstSave") && $this->firstSaved) {
+						$this->afterFirstSave();	// После сохранения
+					}
 					return $this->id;
 				} else {
 					return false;
@@ -366,9 +370,10 @@
 		 /*
 		  * После сохранения
 		  */
-		 public function afterSave()
+		 public function afterFirstSave()
 		 {
-			 // Будет переопределяться в child-классах
+			// Будет переопределяться в child-классах
+			$this->firstSaved = false; // всё, afterFirstSave() больше вызываться не будет
 		 }
 		 
 		 /*

@@ -39,9 +39,11 @@ function stopConfirm()
 {likes_count=task_data.length+task_report_ids.length;if(likes_count<3){bootbox.alert(getIcon("caution")+"Поставьте хотя бы 3 лайка, чтобы завершить накрутку")
 return}
 bootbox.confirm({message:getIcon("heart")+"Вам будет накручено <span class='text-success'><b>+"
-+likes_count+"</b>"+glyphIcon('heart glyphicon-middle')+"</span>",buttons:{confirm:{label:"Завершить"},cancel:{label:"Продолжить накрутку",className:"btn-default opacity-hover high-opacity pull-left"}},callback:function(result){if(result===true){stop()}}})}
-function stop(){ajaxStart()
++likes_count+"</b>"+glyphIcon('heart glyphicon-middle')+"</span><div class='hint-text'>"
++"Убедитесь, что ваша странца открыта для всех, чтобы пользователи смогли поставить Вам лайк"
++"</div>",buttons:{confirm:{label:"Завершить"},cancel:{label:"Продолжить накрутку",className:"btn-default opacity-hover high-opacity pull-left"}},callback:function(result){if(result===true){stop("stats")}}})}
+function stop(menu_name){ajaxStart()
 $.post("task/stop",{"task_data":task_data,"task_report_ids":task_report_ids},function(response){if(response=="banned"){location.reload()}else{ajaxEnd()
 task_data=[]
 task_report_ids=[]
-stopAnimation()}})}
+stopAnimation(menu_name)}})}
